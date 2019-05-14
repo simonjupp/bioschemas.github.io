@@ -1,0 +1,245 @@
+---
+redirect_from: "devSpecs/PatientRegistry/specification"
+redirect_from: "devSpecs/PatientRegistry/specification/"
+name: PatientRegistry
+
+status: release # Change to revision if you are working on an update
+spec_type: Profile
+group: raredisease
+use_cases_url: /useCases/raredisease/
+cross_walk_url: https://docs.google.com/spreadsheets/d/1kl92O05-_3kjYd37YK8q2eb4A1fpYvn3Mkk6HhtUBEs/edit#gid=1261485211
+gh_tasks: https://github.com/BioSchemas/bioschemas/labels/type%3A%20Sample
+live_deploy: /liveDeploys/
+
+parent_type: Thing
+hierarchy:
+- Thing
+- PatientRegistry
+
+spec_mapping_url: https://docs.google.com/spreadsheets/d/1kl92O05-_3kjYd37YK8q2eb4A1fpYvn3Mkk6HhtUBEs/edit#gid=1261485211
+
+# spec_info content generated using GOWeb
+# DO NOT MANUALLY EDIT THE CONTENT
+spec_info:
+  title: Patient Registry
+  subtitle: Bioschemas specification describing a patient or disease registry
+  description: A patient registry is an organised system that uses observational study
+    methods to collect uniform data (clinical and other) to evaluate specified outcomes
+    for a population defined by a particular disease, condition, or exposure, and
+    serves one or more predetermined scientific, clinical, or policy purposes.
+  version: "0.1"
+  version_date: 20190514T184358
+  official_type: http://purl.obolibrary.org/obo/ERO_0001843
+  full_example: ""
+mapping:
+- property: about
+  expected_types:
+  - Text
+  - MedicalCode
+  description: ""
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: additionalProperty
+  expected_types:
+  - PropertyValue
+  description: 'A property-value pair representing an additional characteristics of
+    the entitity, e.g. a product feature or another characteristic for which there
+    is no matching property in schema.org. Note: Publishers should be aware that applications
+    designed to use specific schema.org properties (e.g. http://schema.org/width,
+    http://schema.org/color, http://schema.org/gtin13, ...) will typically expect
+    such data to be provided using those properties, rather than using the generic
+    property/value mechanism.'
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Optional
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: additionalType
+  expected_types:
+  - URL
+  description: An additional type for the item, typically used for adding more specific
+    types from external vocabularies in microdata syntax. This is a relationship between
+    something and a class that the thing is in. In RDFa syntax, it is better to use
+    the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org
+    tools may have only weaker understanding of extra types, in particular those defined
+    externally.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: address
+  expected_types:
+  - Person Or Organization
+  description: Physical address of the item.
+  type: ""
+  type_url: ""
+  bsc_description: Physical address of the registry.
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: alternateName
+  expected_types:
+  - Text
+  description: An alias for the item.
+  type: ""
+  type_url: ""
+  bsc_description: altername name or acronym for the registry
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: author
+  expected_types:
+  - Person Or Organization
+  description: The author of this content
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Optional
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: code
+  expected_types:
+  - MedicalCode
+  description: A medical code for the entity, taken from a controlled vocabulary or
+    ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Recommended
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: description
+  expected_types:
+  - Text
+  description: A description of the item.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: identifier
+  expected_types:
+  - PropertyValue
+  - Text
+  - URL
+  description: The identifier property represents any kind of identifier for any kind
+    of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated
+    properties for representing many of these, either as textual strings or as URL
+    (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg)
+    for more details.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: image
+  expected_types:
+  - ImageObject
+  - URL
+  description: An image of the item. This can be a URL or a fully described ImageObject.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Optional
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: name
+  expected_types:
+  - Text
+  description: The name of the item.
+  type: ""
+  type_url: ""
+  bsc_description: name of the registry
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: sameAs
+  expected_types:
+  - URL
+  description: URL of a reference Web page that unambiguously indicates the item's
+    identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
+    website.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Recommended
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: sponsor
+  expected_types:
+  - Organization
+  - Person
+  description: A person or organization that supports a thing through a pledge, promise,
+    or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor
+    of an event.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Optional
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: trialDesign
+  expected_types:
+  - MedicalTrialDesign
+  description: Specifics about the trial design (such as inclusion or exclusion criteria)
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Minimum
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+- property: url
+  expected_types:
+  - URL
+  description: URL of the item.
+  type: ""
+  type_url: ""
+  bsc_description: ""
+  marginality: Recommended
+  cardinality: ""
+  controlled_vocab: ""
+  example: ""
+---
+
+<!DOCTYPE HTML>
+<html>
+   {% include head.html %}
+   <body>
+      {% include header.html %}
+      {% include navbar.html %}
+      <div class="page-content">
+         <div class="wrapper">
+            <div id="main-content-wrapper" class="outer">
+               <section id="main_content" class="inner">
+                  {% include profile_start.html %}
+                  {% include specification_table.html %}
+               </section>
+            </div>
+         </div>
+      </div>
+      {% include footer.html %}
+   </body>
+</html>
