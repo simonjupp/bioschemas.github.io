@@ -28,7 +28,7 @@ spec_info:
     for a population defined by a particular disease, condition, or exposure, and
     serves one or more predetermined scientific, clinical, or policy purposes.
   version: "0.1"
-  version_date: 20190514T184358
+  version_date: 20190514T230336
   official_type: http://purl.obolibrary.org/obo/ERO_0001843
   full_example: ""
 mapping:
@@ -36,12 +36,12 @@ mapping:
   expected_types:
   - Text
   - MedicalCode
-  description: ""
-  type: ""
+  description: The subject matter of the content
+  type: schema.org
   type_url: ""
-  bsc_description: ""
+  bsc_description: 'The primary disease or medical area that the registry is about '
   marginality: Minimum
-  cardinality: ""
+  cardinality: MANY
   controlled_vocab: ""
   example: ""
 - property: additionalProperty
@@ -54,7 +54,7 @@ mapping:
     http://schema.org/color, http://schema.org/gtin13, ...) will typically expect
     such data to be provided using those properties, rather than using the generic
     property/value mechanism.'
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Optional
@@ -70,18 +70,20 @@ mapping:
     the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org
     tools may have only weaker understanding of extra types, in particular those defined
     externally.
-  type: ""
+  type: schema.org
   type_url: ""
-  bsc_description: ""
+  bsc_description: A more specifc type of the registry. The value should be the URL
+    of a term from an ontology that describes this registry type e.g. "clinical registry"
   marginality: Minimum
-  cardinality: ""
+  cardinality: MANY
   controlled_vocab: ""
-  example: ""
+  example: ejp:PatientOrganisation
 - property: address
   expected_types:
-  - Person Or Organization
+  - Person
+  - Organization
   description: Physical address of the item.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: Physical address of the registry.
   marginality: Minimum
@@ -92,18 +94,19 @@ mapping:
   expected_types:
   - Text
   description: An alias for the item.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: altername name or acronym for the registry
   marginality: Minimum
-  cardinality: ""
+  cardinality: MANY
   controlled_vocab: ""
-  example: ""
+  example: ERK-Reg
 - property: author
   expected_types:
-  - Person Or Organization
+  - Person
+  - Organization
   description: The author of this content
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Optional
@@ -115,24 +118,25 @@ mapping:
   - MedicalCode
   description: A medical code for the entity, taken from a controlled vocabulary or
     ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Recommended
   cardinality: ""
   controlled_vocab: ""
-  example: ""
+  example: ORPHA:79628
 - property: description
   expected_types:
   - Text
   description: A description of the item.
-  type: ""
+  type: schema.org
   type_url: ""
-  bsc_description: ""
+  bsc_description: A description of the registry.
   marginality: Minimum
   cardinality: ""
   controlled_vocab: ""
-  example: ""
+  example: 'In ERK-Reg members and partners of the European Rare Kidney Disease Registry
+    (ERKNet) collect information from patients with rare kidney diseases. '
 - property: identifier
   expected_types:
   - PropertyValue
@@ -143,22 +147,10 @@ mapping:
     properties for representing many of these, either as textual strings or as URL
     (URI) links. See [background notes](http://schema.org/docs/datamodel.html#identifierBg)
     for more details.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Minimum
-  cardinality: ""
-  controlled_vocab: ""
-  example: ""
-- property: image
-  expected_types:
-  - ImageObject
-  - URL
-  description: An image of the item. This can be a URL or a fully described ImageObject.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
   cardinality: ""
   controlled_vocab: ""
   example: ""
@@ -166,20 +158,20 @@ mapping:
   expected_types:
   - Text
   description: The name of the item.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: name of the registry
   marginality: Minimum
-  cardinality: ""
+  cardinality: ONE
   controlled_vocab: ""
-  example: ""
+  example: European Rare Kidney Disease Registry
 - property: sameAs
   expected_types:
   - URL
   description: URL of a reference Web page that unambiguously indicates the item's
     identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
     website.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Recommended
@@ -193,18 +185,18 @@ mapping:
   description: A person or organization that supports a thing through a pledge, promise,
     or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor
     of an event.
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Optional
   cardinality: ""
   controlled_vocab: ""
-  example: ""
+  example: EU (Chafea)
 - property: trialDesign
   expected_types:
   - MedicalTrialDesign
   description: Specifics about the trial design (such as inclusion or exclusion criteria)
-  type: ""
+  type: schema.org
   type_url: ""
   bsc_description: ""
   marginality: Minimum
@@ -215,13 +207,13 @@ mapping:
   expected_types:
   - URL
   description: URL of the item.
-  type: ""
+  type: schema.org
   type_url: ""
-  bsc_description: ""
+  bsc_description: URL for the registry
   marginality: Recommended
   cardinality: ""
   controlled_vocab: ""
-  example: ""
+  example: https://registry.erknet.org/
 ---
 
 <!DOCTYPE HTML>
